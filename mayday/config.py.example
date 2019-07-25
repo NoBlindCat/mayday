@@ -1,0 +1,7 @@
+MYSQL_DB = {
+    "NAME": "",
+    "USER": "",
+    "PASSWORD": "",
+    "HOST": "",
+    "PORT": "",
+}
