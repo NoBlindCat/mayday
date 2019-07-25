@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from . import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'mayday.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config.MYSQL_DB["NAME"],
+        'USER': config.MYSQL_DB["USER"],
+        'PASSWORD': config.MYSQL_DB["PASSWORD"],
+        'HOST': config.MYSQL_DB["HOST"],
+        'PORT': config.MYSQL_DB["PORT"],
     }
 }
 
